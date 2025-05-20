@@ -7,11 +7,17 @@ public class Main {
         arvore.raiz.direito = new No("C");
         arvore.raiz.esquerdo.esquerdo = new No("D");
         arvore.raiz.esquerdo.direito = new No("E");
+        arvore.raiz.direito.direito = new No("F"); /*Tinha esquecido de implementar o F*/
 
         int totalNos = arvore.contarNos();
         System.out.println("Total de nós: " + totalNos);
 
         System.out.println("Travessia em pré-ordem: ");
         arvore.percorrerEmPreOrdem();
+
+        System.out.println();
+
+        System.out.println("Travessia em ordem: ");
+        arvore.percorrerEmOrdem();
     }
 }

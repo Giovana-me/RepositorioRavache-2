@@ -23,4 +23,16 @@ public class Arvore {
             percorrerEmPreOrdemRecursivo(no.direito);
         }
     }
+
+    public void percorrerEmOrdem() {
+        percorrerEmOrdemRecursivo(raiz);
+    }
+
+    private void percorrerEmOrdemRecursivo(No no) {
+        if (no != null) {
+            percorrerEmOrdemRecursivo(no.esquerdo);
+            System.out.print(no.valor + " ");
+            percorrerEmOrdemRecursivo(no.direito);
+        }
+    }
 }
