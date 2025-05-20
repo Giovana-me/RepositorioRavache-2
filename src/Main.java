@@ -10,5 +10,8 @@ public class Main {
 
         int totalNos = arvore.contarNos();
         System.out.println("Total de nós: " + totalNos);
+
+        System.out.println("Travessia em pré-ordem: ");
+        arvore.percorrerEmPreOrdem();
     }
 }
