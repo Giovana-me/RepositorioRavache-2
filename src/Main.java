@@ -19,5 +19,10 @@ public class Main {
 
         System.out.println("Travessia em ordem: ");
         arvore.percorrerEmOrdem();
+
+        System.out.println();
+
+        System.out.println("Travessia em pós-ordem: ");
+        arvore.percorrerEmPosOrdem();
     }
 }
