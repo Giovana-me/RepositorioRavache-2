@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class ArvoreSemRecursividade {
     No raiz;
@@ -25,5 +26,26 @@ public class ArvoreSemRecursividade {
             }
         }
         return contador;
+    }
+
+    public void percorrerEmPreOrdemIterativo() {
+        if (raiz == null) {
+            return;
+        }
+
+        Stack<No> pilha = new Stack<>();
+        pilha.push(raiz);
+
+        while (!pilha.isEmpty()) {
+            No noAtual = pilha.pop();
+            System.out.print(noAtual.valor + " ");
+
+            if (noAtual.direito != null) {
+                pilha.push(noAtual.direito);
+            }
+            if (noAtual.esquerdo != null) {
+                pilha.push(noAtual.esquerdo);
+            }
+        }
     }
 }
