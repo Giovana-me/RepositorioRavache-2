@@ -7,7 +7,7 @@ public class Main {
         arvore.raiz.direito = new No("C");
         arvore.raiz.esquerdo.esquerdo = new No("D");
         arvore.raiz.esquerdo.direito = new No("E");
-        arvore.raiz.direito.direito = new No("F"); /*Tinha esquecido de implementar o F*/
+        arvore.raiz.direito.direito = new No("F");
 
         int totalNos = arvore.contarNos();
         System.out.println("Total de nós: " + totalNos);
@@ -24,5 +24,10 @@ public class Main {
 
         System.out.println("Travessia em pós-ordem: ");
         arvore.percorrerEmPosOrdem();
+
+        System.out.println();
+
+        System.out.println("Travessia em nível: ");
+        arvore.percorrerEmNivel();
     }
 }

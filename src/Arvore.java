@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Arvore {
     No raiz;
 
@@ -45,6 +48,27 @@ public class Arvore {
             percorrerEmPosOrdemRecursivo(no.esquerdo);
             percorrerEmPosOrdemRecursivo(no.direito);
             System.out.print(no.valor + " ");
+        }
+    }
+
+    public void percorrerEmNivel() {
+        if (raiz == null) {
+            return;
+        }
+
+        Queue<No> fila = new LinkedList<>();
+        fila.add(raiz);
+
+        while (!fila.isEmpty()) {
+            No noAtual = fila.poll();
+            System.out.print(noAtual.valor + " ");
+
+            if (noAtual.esquerdo != null) {
+                fila.add(noAtual.esquerdo);
+            }
+            if (noAtual.direito != null) {
+                fila.add(noAtual.direito);
+            }
         }
     }
 }
