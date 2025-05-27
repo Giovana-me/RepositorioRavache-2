@@ -41,14 +41,19 @@ public class Main {
         System.out.println();
 
         int totalNosIterativo = arvoreSR.contarNosIterativo();
-        System.out.println("Total de nós: " + totalNosIterativo);
+        System.out.println("Total de nós: (iterativo) " + totalNosIterativo);
 
-        System.out.println("Travessia em pré-ordem: ");
+        System.out.println("Travessia em pré-ordem: (iterativo)");
         arvoreSR.percorrerEmPreOrdemIterativo();
 
         System.out.println();
 
-        System.out.println("Travessia em em-ordem: ");
+        System.out.println("Travessia em em-ordem: (iterativo)");
         arvoreSR.percorrerEmOrdemIterativo();
+
+        System.out.println();
+
+        System.out.println("Travessia em pós-ordem: (iterativo)");
+        arvoreSR.percorrerEmPosOrdemIterativo();
     }
 }
