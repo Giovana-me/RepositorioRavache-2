@@ -71,4 +71,18 @@ public class Arvore {
             }
         }
     }
+
+    public int contarNosFolha() {
+        return contarNosFolhaRecursivo(raiz);
+    }
+
+    private int contarNosFolhaRecursivo(No no) {
+        if (no == null) {
+            return 0;
+        }
+        if (no.esquerdo == null && no.direito == null) {
+            return 1;
+        }
+        return contarNosFolhaRecursivo(no.esquerdo) + contarNosFolhaRecursivo(no.direito);
+    }
 }

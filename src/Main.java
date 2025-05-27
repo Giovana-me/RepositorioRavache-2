@@ -55,5 +55,10 @@ public class Main {
 
         System.out.println("Travessia em pós-ordem: (iterativo)");
         arvoreSR.percorrerEmPosOrdemIterativo();
+
+        System.out.println();
+
+        int totalNosFolha = arvore.contarNosFolha();
+        System.out.println("Total de nós-folha: " + totalNosFolha);
     }
 }
