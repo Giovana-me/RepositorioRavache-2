@@ -45,5 +45,10 @@ public class Main {
 
         System.out.println("Travessia em pré-ordem: ");
         arvoreSR.percorrerEmPreOrdemIterativo();
+
+        System.out.println();
+
+        System.out.println("Travessia em em-ordem: ");
+        arvoreSR.percorrerEmOrdemIterativo();
     }
 }

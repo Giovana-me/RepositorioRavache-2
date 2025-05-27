@@ -48,4 +48,24 @@ public class ArvoreSemRecursividade {
             }
         }
     }
+
+    public void percorrerEmOrdemIterativo() {
+        if (raiz == null) {
+            return;
+        }
+
+        Stack<No> pilha = new Stack<>();
+        No atual = raiz;
+
+        while (atual != null || !pilha.isEmpty()) {
+            while (atual != null) {
+                pilha.push(atual);
+                atual = atual.esquerdo;
+            }
+            atual = pilha.pop();
+            System.out.print(atual.valor + " ");
+
+            atual = atual.direito;
+        }
+    }
 }
