@@ -93,4 +93,29 @@ public class ArvoreSemRecursividade {
             System.out.print(pilha2.pop().valor + " ");
         }
     }
+
+    public int contarNosFolhaIterativo() {
+        if (raiz == null) {
+            return 0;
+        }
+
+        Queue<No> fila = new LinkedList<>();
+        fila.add(raiz);
+        int contador = 0;
+
+        while (!fila.isEmpty()) {
+            No noAtual = fila.poll();
+
+            if (noAtual.esquerdo == null && noAtual.direito == null) {
+                contador++;
+            }
+            if (noAtual.esquerdo != null) {
+                fila.add(noAtual.esquerdo);
+            }
+            if (noAtual.direito != null) {
+                fila.add(noAtual.direito);
+            }
+        }
+        return contador;
+    }
 }
