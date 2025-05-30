@@ -118,4 +118,25 @@ public class ArvoreSemRecursividade {
         }
         return contador;
     }
+
+    public int contarNosComPilha() {
+        if (raiz == null) {
+            return 0;
+        }
+
+        Stack<No> pilha = new Stack<>();
+        pilha.push(raiz);
+
+        int contador = 0;
+
+        while (!pilha.isEmpty()) {
+            No noAtual = pilha.pop();
+            contador++;
+
+            if (noAtual.direito != null) pilha.push(noAtual.direito);
+            if (noAtual.esquerdo != null) pilha.push(noAtual.esquerdo);
+        }
+
+        return contador;
+    }
 }

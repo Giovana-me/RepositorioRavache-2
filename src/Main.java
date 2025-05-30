@@ -63,5 +63,8 @@ public class Main {
 
         int totalNosFolhaIterativo = arvoreSR.contarNosFolhaIterativo();
         System.out.println("Total de nós-folha: (Iterativo) " + totalNosFolhaIterativo);
+
+        int totalNosComPilha = arvoreSR.contarNosComPilha();
+        System.out.println("Total de nós: (iterativo,pilha) " + totalNosComPilha);
     }
 }
