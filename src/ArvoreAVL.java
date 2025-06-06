@@ -17,30 +17,30 @@ public class ArvoreAVL {
         }
     }
 
-    private NoAVL rotacaoEsquerda(NoAVL x) {
-        NoAVL y = x.direita;
-        NoAVL T2 = y.direita;
+    private NoAVL rotacaoDireita(NoAVL noDesbalanceado) {
+        NoAVL novaRaiz = noDesbalanceado.esquerda;
+        NoAVL subarvoreTemporaria = novaRaiz.direita;
 
-        y.esquerda = x;
-        x.direita = T2;
+        novaRaiz.direita = noDesbalanceado;
+        noDesbalanceado.esquerda = subarvoreTemporaria;
 
-        x.altura = Math.max(altura(x.esquerda), altura(x.direita)) + 1;
-        y.altura = Math.max(altura(y.esquerda), altura(y.direita)) + 1;
+        noDesbalanceado.altura = Math.max(altura(noDesbalanceado.esquerda), altura(noDesbalanceado.direita)) + 1;
+        novaRaiz.altura = Math.max(altura(novaRaiz.esquerda), altura(novaRaiz.direita)) + 1;
 
-        return y;
+        return novaRaiz;
     }
 
-    private NoAVL rotacaoDireita(NoAVL y) {
-        NoAVL x = y.esquerda;
-        NoAVL T2 = x.direita;
+    private NoAVL rotacaoEsquerda(NoAVL noDesbalanceado) {
+        NoAVL novaRaiz = noDesbalanceado.direita;
+        NoAVL subarvoreTemporaria = novaRaiz.direita;
 
-        x.direita = y;
-        y.esquerda = T2;
+        novaRaiz.esquerda = noDesbalanceado;
+        noDesbalanceado.direita = subarvoreTemporaria;
 
-        y.altura = Math.max(altura(y.esquerda), altura(y.direita)) + 1;
-        x.altura = Math.max(altura(x.esquerda), altura(x.direita)) + 1;
+        noDesbalanceado.altura = Math.max(altura(noDesbalanceado.esquerda), altura(noDesbalanceado.direita)) + 1;
+        novaRaiz.altura = Math.max(altura(novaRaiz.esquerda), altura(novaRaiz.direita)) + 1;
 
-        return x;
+        return novaRaiz;
     }
 
     public NoAVL inserir(NoAVL noAVL, int chave) {
