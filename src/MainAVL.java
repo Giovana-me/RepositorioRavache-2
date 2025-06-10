@@ -32,6 +32,7 @@ public class MainAVL {
         }
 
         System.out.println("Árvore AVL após remoção.");
+
     }
 
 }

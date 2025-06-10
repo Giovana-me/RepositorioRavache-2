@@ -32,7 +32,7 @@ public class ArvoreAVL {
 
     private NoAVL rotacaoEsquerda(NoAVL noDesbalanceado) {
         NoAVL novaRaiz = noDesbalanceado.direita;
-        NoAVL subarvoreTemporaria = novaRaiz.direita;
+        NoAVL subarvoreTemporaria = novaRaiz.esquerda;
 
         novaRaiz.esquerda = noDesbalanceado;
         noDesbalanceado.direita = subarvoreTemporaria;
@@ -151,6 +151,14 @@ public class ArvoreAVL {
             return buscar(noAVL.esquerda, chave);
         } else {
             return buscar(noAVL.direita, chave);
+        }
+    }
+
+    void percursoEmOrdem(NoAVL noAVL) {
+        if (noAVL != null) {
+            percursoEmOrdem(noAVL.esquerda);
+            System.out.print(noAVL.chave + " ");
+            percursoEmOrdem(noAVL.direita);
         }
     }
 }
